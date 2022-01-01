@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    place-items: center;
+    padding: 1rem 1.5rem;
+    justify-content: space-between;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.424);
+}
+
+@media screen and (min-width: 768px){ 
+    .header {
+        padding: 1rem 3rem;
+    }
+}

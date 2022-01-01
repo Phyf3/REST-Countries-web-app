@@ -1,0 +1,101 @@
+.skeleton-container {
+    display: grid;
+    place-items: center;
+}
+.skeleton-wrapper {
+    padding:1rem;
+    background-color: hsl(207, 26%, 17%);
+    height: 9.5rem;
+    width:9.5rem;
+    border-radius: .3rem;
+    margin:6rem 3rem;;
+    animation-name: changing;
+    animation-duration: 3000ms; 
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: 0.7;
+}
+    @keyframes changing {
+        0% {
+            background-color: hsla(209, 26%, 17%, 0.815)
+        }
+
+        50% {
+            background-color: hsl(208, 25%, 46%);
+        }
+    }
+
+.skeleton-flag {
+    border-radius: .3125rem;
+    height: 5rem;
+    width: 9rem;
+    background-color: hsl(209, 23%, 22%);
+}
+
+.skeletion-details div{
+    margin-top:.5rem;
+    width:8.7rem;
+    height: 1.2rem;;
+    background-color: hsl(209, 23%, 22%);
+    border-radius: .3125rem;
+   
+}
+.skeletion-details>div:nth-child(1) {
+    animation-name: bar-1;
+    animation-duration: 1000ms; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    opacity: 0.7;
+}
+@keyframes bar-1 {
+    0% {
+        width: 4rem;
+    }
+    50% {
+        width:8.7rem;
+    }
+}
+.skeletion-details>div:nth-child(2){
+    width:8.5rem;
+    height: 1.1rem;
+    animation-name: bar-2;
+    animation-duration: 1000ms; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    opacity: 0.7;
+}
+@keyframes bar-2 {
+    0% {
+        width: 4rem;
+    }
+    50% {
+        width:8.5rem;
+    }
+}
+.skeletion-details>div:nth-child(3){
+    width: 8rem;
+    height: 1rem;;
+    animation-name: bar-3;
+    animation-duration: 1000ms; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    opacity: 0.7;
+}
+@keyframes bar-3 {
+    0% {
+        width: 4rem;
+    }
+    50% {
+        width:8rem;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .skeleton-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}

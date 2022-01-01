@@ -1,0 +1,40 @@
+.filters-container {
+    display: grid;
+    place-items: center;
+    margin-top:2rem;
+}
+
+.search-field input {
+    width: 80vw;
+    height: 2.5rem;
+    border-radius: .3125rem;
+    border: 0px solid;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.424);
+}
+.region-filter {
+    margin-top:1rem;
+}
+.region-filter select {
+    width:50vw;
+    height: 2.5rem;
+    border-radius: .3125rem
+}
+.region-filter option {
+    border-radius: .3rem;;
+    border:  0px solid;
+}
+
+
+@media screen and (min-width: 768px){ 
+    .filters-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 4rem;
+    }
+    .search-field input {
+        width:15rem;
+    }
+    .region-filter select {
+        width: 10rem;
+    }
+}

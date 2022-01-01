@@ -1,0 +1,14 @@
+
+.light {
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(200, 15%, 8%);
+}
+.dark {
+    background-color:hsl(207, 26%, 17%) ;
+    color: hsl(0, 0%, 100%);
+}
+
+.dark input, .dark select {
+    background-color: hsl(209, 23%, 22%) ;
+    color: white;
+}
