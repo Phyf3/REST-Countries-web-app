@@ -3,12 +3,39 @@
     background-color: hsl(0, 0%, 98%);
     color: hsl(200, 15%, 8%);
 }
-.dark {
+.dark{
     background-color:hsl(207, 26%, 17%) ;
     color: hsl(0, 0%, 100%);
 }
 
-.dark input, .dark select {
+
+.dark input, .dark select, .dark .searchlist {
     background-color: hsl(209, 23%, 22%) ;
     color: white;
+}
+.light .searchlist {
+    background-color: hsl(0, 0%, 100%)
+}
+.link {
+    text-decoration: none;
+}
+.dark .link {
+    color: white;
+}
+.light .link {
+    color: black;
+}
+
+.dark .country-card {
+    background-color: hsl(209, 23%, 22%);
+}
+.light .country-card {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
 }

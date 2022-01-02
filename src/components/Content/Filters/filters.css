@@ -9,6 +9,7 @@
     height: 2.5rem;
     border-radius: .3125rem;
     border: 0px solid;
+    padding-left: 2rem;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.424);
 }
 .region-filter {
@@ -22,6 +23,19 @@
 .region-filter option {
     border-radius: .3rem;;
     border:  0px solid;
+}
+.searchlist {
+    position: absolute;
+    height:15rem;
+    width:  10rem;
+    color: black;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding:1rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.24);
+}
+.searchlist p {
+    padding-top:.5rem;
 }
 
 

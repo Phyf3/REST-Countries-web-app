@@ -1,0 +1,48 @@
+
+.country-card {
+    display: grid;
+    background-color: hsl(209, 23%, 22%);;
+    border-radius: .3125rem;
+    width: 70vw;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.452);
+}
+
+.country-flags img {
+    width: fit-content;
+    height: 7rem;
+}
+.countries-container {
+    display: grid;
+    gap: 2rem;
+    place-items: center;
+    margin-top:2rem;
+    
+}
+.country-info {
+    padding: 0rem 2rem;
+    display: grid;
+}
+.country-info p {
+    margin-top: .3rem;
+    text-decoration: none;
+}
+.page {
+    display: grid;
+}
+
+
+@media screen and (min-width: 768px){ 
+    .countries-container { 
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap:1rem;
+    }
+    .country-card {
+        min-width: 14.9375rem;
+        max-width: 15rem;;
+        padding: 1rem 0rem;
+    }
+    .country-flags img {
+        min-width: 12.9375rem;
+        max-width: 13rem;;
+    }
+}
