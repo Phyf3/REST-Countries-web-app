@@ -1,12 +1,9 @@
 import React, {useState,  useEffect} from "react";
 import { Link } from "react-router-dom";
 import './filters.css'
+import {useNavigate} from "react-router";
 
-const Filters = ({countries, fetchCountries}) => {
-
-
-    const [filter, setFilter] = useState([]);
-
+const Filters = ({countries, fetchCountries, setCountries}) => {
 
     useEffect(() => {
         fetchCountries()
@@ -14,19 +11,34 @@ const Filters = ({countries, fetchCountries}) => {
     // eslint-disable-next-line
     []);
 
+
+    const [filter, setFilter] = useState([]);
+
     const handleSearch = (e) => {
         const toSearch = e.target.value;
-       
-        
+
         const filterSearch = countries.filter((value) => {
             return value.name.common.toLowerCase().includes(toSearch.toLowerCase())
         });
-        console.log(filterSearch)
 
+        //console.log(filterSearch)
         setFilter(filterSearch);
     }
 
 
+    //Linking in an option tag through navigate() in a function
+    let navigate = useNavigate()
+    const handleRegion = (value) => {
+        navigate(`region/${value}`)
+    }
+
+    //Getting all regions
+    const regionsInDuplicates = countries.map(({region}) => (
+        region
+    ))
+
+    //Eliminating duplicate/repeating words and sorting them in ascending order
+    const singleRegions = [...new Set(regionsInDuplicates)].sort()
 
     return ( 
         <>
@@ -51,14 +63,15 @@ const Filters = ({countries, fetchCountries}) => {
                 </div>
 
                 <div className=" region-filter">
-                    <select name="countries" defaultValue={"Default"} id="" className="select"> 
+                    <select onChange={(e) => handleRegion(e.target.value) } className="select"> 
                         <option value={"Filter by Region"}  hidden> Filter by Region</option>
-                        <option> Africa </option>
-                        <option> Africa </option>
-                        <option> Africa </option>
-                        <option> Africa </option>
-                        <option> Africa </option>
-                    </select>
+                            
+                        {singleRegions.map((region, id) => (
+                            <option key = {id} value = {region}>  
+                                {region} 
+                            </option>
+                        ))}
+                    </select>        
                 </div> 
             </div>
 

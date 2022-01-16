@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Country from './components/Content/CountryDetails/Country';
 import AllCountries from './components/Content/CountryDetails/AllCountries';
+import Region from './components/Content/CountryDetails/Region';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path = "/" element = { <App />} />
         <Route path = "/countries" element={ <AllCountries />} />
         <Route path="countries/:name" element={<Country />} />
+        <Route path="region/:region" element={<Region />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

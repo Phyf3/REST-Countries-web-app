@@ -35,7 +35,7 @@ const AllCountries = () => {
             :
             <main className="page" >
                 <div>
-                    <Filters  countries={countries}  
+                    <Filters  countries={countries}  setCountries = {setCountries}
                         fetchCountries={fetchCountries}
                         loading={loading}
                     />
