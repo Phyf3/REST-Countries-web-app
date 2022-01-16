@@ -41,33 +41,36 @@ const Country = () => {
                         <h2> I dey find details....... </h2> 
                         : 
                         <div className="result_container">
-                            {countryDetails.map(({flags, population, region, name}) => (
+                            {countryDetails.map(({
+                                flags, population, region, name, subregion, capital,
+                                tld,borders, languages, currencies
+                            }) => (
                                 <div className = "result" key={name.common}>
                                     <div className = "result_flag">
                                         <img src={flags.svg} alt="" />
                                     </div>
 
-                                    <div className="result-details">
+                                    <div className="result-details" key = {name.common}>
                                         <div>
                                             <h2>  {name.common}</h2>
                                         </div>
                                         
                                         <div>
-                                            <span>Native Name: </span>
-                                            <span> Top Level Domain: </span>
-                                            <span>Population: {population} </span>
-                                            <span>Currencies: </span>
-                                            <span>Region: {region} </span>
-                                            <span>Languages:</span>
-                                            <span>Sub Region: {}</span>
-                                            <span>Capital: </span>
+                                            <span>  <strong>Native Name -  </strong> {Object.values(name.nativeName)[0].official} </span>
+                                            <span> <strong>Top Level Domain :</strong> {tld.toString()} </span>
+                                            <span> <strong>Population : </strong> {population} </span>
+                                            <span>  <strong>Currencies :</strong> {Object.values(currencies)[0].name} </span>
+                                            <span>  <strong>Region :</strong> {region} </span>
+                                            <span>  <strong>Languages :</strong> {Object.values(languages)[0]} </span>
+                                            <span> <strong>Sub Region :</strong>  {subregion}</span>
+                                            <span> <strong>Capital : </strong> {capital.toString()} </span>
                                         </div>
 
-                                        <div>
-                                            <h2> Border Countries : </h2>
-                                            <button></button>
-                                            <button></button>
-                                            <button></button>
+                                        <div className="border">
+                                            <h3> <strong>Border Countries :</strong>  </h3>
+                                                {borders.map((border)=> (
+                                                    <button key = {border}> {border} </button>
+                                                ))}
                                         </div>
                                     </div>
                                 </div>

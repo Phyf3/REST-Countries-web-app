@@ -6,7 +6,11 @@
     width: 70vw;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.452);
 }
-
+.country-flags {
+    display: grid;
+    place-items: center;
+    padding-top:1rem
+}
 .country-flags img {
     width: fit-content;
     height: 7rem;

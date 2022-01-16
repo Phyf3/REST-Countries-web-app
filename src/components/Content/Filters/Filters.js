@@ -66,8 +66,8 @@ const Filters = ({countries, fetchCountries, setCountries}) => {
                     <select onChange={(e) => handleRegion(e.target.value) } className="select"> 
                         <option value={"Filter by Region"}  hidden> Filter by Region</option>
                             
-                        {singleRegions.map((region, id) => (
-                            <option key = {id} value = {region}>  
+                        {singleRegions.map((region) => (
+                            <option key = {region} value = {region}>  
                                 {region} 
                             </option>
                         ))}
