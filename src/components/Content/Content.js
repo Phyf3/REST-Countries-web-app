@@ -3,9 +3,6 @@ import AllCountries from "./CountryDetails/AllCountries";
 
 const Content = () => {
 
-
-    
-
     return ( 
         <div>
             <AllCountries />

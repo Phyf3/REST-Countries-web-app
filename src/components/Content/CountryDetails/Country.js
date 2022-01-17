@@ -65,7 +65,7 @@ const Country = () => {
                                             <span> <strong>Sub Region :</strong>  {subregion}</span>
                                             <span> <strong>Capital : </strong> {capital ? capital.toString() : <strong> none </strong>} </span>
 
-                                            <button onClick = {() => console.log(capital[0]) } > Test</button>
+                                            {/* <button onClick = {() => console.log(capital[0]) } > Test</button> */}
                                         </div>
 
                                         {/*<div className="border">

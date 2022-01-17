@@ -33,8 +33,16 @@
     gap:1rem;
     text-align: left;
 }
+
+.result-details div:nth-child(1) h2{
+    width: 13ch;
+}
+.result-details div:nth-child(2) span {
+    width: 36ch;
+}
 .result-page {
     background-color: hsl(207, 26%, 17%) ;
+    height:100vh;
 }
 
 .border h3 {
@@ -49,6 +57,9 @@
     .result-details {
         padding-left:10rem;
 
+    }
+    .result-details div:nth-child(1) h2{
+        width: 30ch;
     }
     .result-details div:nth-child(2) {
         grid-template-columns: 1fr 1fr;
