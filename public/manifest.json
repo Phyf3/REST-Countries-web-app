@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "REST Countries",
+  "name": "Get Details on Countries and Regions",
   "icons": [
     {
       "src": "favicon.ico",
