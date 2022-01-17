@@ -56,22 +56,22 @@ const Country = () => {
                                         </div>
                                         
                                         <div>
-                                            <span>  <strong>Native Name -  </strong> {Object.values(name.nativeName)[0].official} </span>
-                                            <span> <strong>Top Level Domain :</strong> {tld.toString()} </span>
+                                            <span>  <strong>Native Name -  </strong> {name.nativeName ? Object.values(name.nativeName)[0].official : <strong> none </strong>} </span>
+                                            <span> <strong>Top Level Domain :</strong> {tld ?  tld.toString() : <strong> none </strong>} </span>
                                             <span> <strong>Population : </strong> {population} </span>
-                                            <span>  <strong>Currencies :</strong> {Object.values(currencies)[0].name} </span>
+                                            <span>  <strong>Currencies :</strong> {currencies ? Object.values(currencies)[0].name : <strong> none </strong>} </span>
                                             <span>  <strong>Region :</strong> {region} </span>
-                                            <span>  <strong>Languages :</strong> {Object.values(languages)[0]} </span>
+                                            <span>  <strong>Languages :</strong> {languages ? Object.values(languages)[0] : <strong> none </strong>} </span>
                                             <span> <strong>Sub Region :</strong>  {subregion}</span>
-                                            <span> <strong>Capital : </strong> {capital.toString()} </span>
+                                            <span> <strong>Capital : </strong> {capital ? capital.toString() : <strong> none </strong>} </span>
+
+                                            <button onClick = {() => console.log(capital[0]) } > Test</button>
                                         </div>
 
-                                        <div className="border">
+                                        {/*<div className="border">
                                             <h3> <strong>Border Countries :</strong>  </h3>
-                                                {borders.map((border)=> (
-                                                    <button key = {border}> {border} </button>
-                                                ))}
-                                        </div>
+                                                {Array.from(borders, ({border}) => border)}; 
+                                        </div>*/}
                                     </div>
                                 </div>
                             ))}
