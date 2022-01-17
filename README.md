@@ -3,7 +3,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Challenge
 
 Navigating the api for the region filter components
-Using CONTEXT for theme
 
 
 
