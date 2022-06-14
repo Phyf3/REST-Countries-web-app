@@ -1,7 +1,7 @@
 
 .country-card {
     display: grid;
-    background-color: hsl(209, 23%, 22%);;
+    background-color: var(--countryCard);
     border-radius: .3125rem;
     width: 70vw;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.452);
@@ -32,6 +32,7 @@
 }
 .page {
     display: grid;
+    /* background-color: hsl(210, 26%, 23%); */
 }
 
 

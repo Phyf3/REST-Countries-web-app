@@ -23,7 +23,7 @@
 
 .result-details {
     display: grid;
-    color:white;
+    color:var(--selectcolor);
 }
 .result-details h2 {
     text-transform: uppercase;
@@ -39,10 +39,6 @@
 }
 .result-details div:nth-child(2) span {
     width: 36ch;
-}
-.result-page {
-    background-color: hsl(207, 26%, 17%) ;
-    height:100vh;
 }
 
 .border h3 {

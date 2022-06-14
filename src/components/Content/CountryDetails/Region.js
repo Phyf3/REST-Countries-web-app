@@ -5,7 +5,7 @@ import './country.css'
 
 
 
-const Region = () => {
+const Region = ({themeName,regionName, setFiltered}) => {
 
     const [filterRegion, setFilterRegion] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -14,22 +14,21 @@ const Region = () => {
 
     useEffect(() => {
         const fetchRegion = async () => {
-            const res = await fetch (`https://restcountries.com/v3.1/region/${region}`)         
+            const res = await fetch (`https://restcountries.com/v3.1/region/${regionName}`)         
             const data = await res.json()
             setFilterRegion(data)
             setLoading(false);
             console.log(data)
         } 
         fetchRegion()
-    }, [region])
+    }, [regionName])
 
     return ( 
-        <div className="result-page">
+        <div className={`${themeName} result-page ` }>
 
             <div className="result-wrapper">
-                <Link to="/">
-                    <button className="back"> Back </button>
-                </Link>
+                
+                <button onClick={() => setFiltered(false)} className="back"> Back </button>
                 
 
                 <div>

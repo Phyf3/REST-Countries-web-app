@@ -1,15 +1,17 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import './allcountries.css'
 import Skeleton from "./Skeleton";
 import { Link } from "react-router-dom";
 import Filters from "../Filters/Filters";
-
+import { ThemeContext } from "../../../helper/themecontext";
+import Region from "./Region";
 
 const AllCountries = () => {
 
     const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const {themeName, setFiltered, filtered, regionName} = useContext(ThemeContext)
 
 
     const fetchCountries = async() => {
@@ -23,16 +25,18 @@ const AllCountries = () => {
         fetchCountries()
     }, []); 
 
-   
-
-    return ( 
-        <>
-        
-        { loading ? 
+    if(loading) {
+        return(
             <div>
                 <Skeleton />
-            </div> 
-            :
+            </div>
+        )
+    }
+
+   if(!loading){
+    return ( 
+        <>
+        {filtered ? <Region themeName={themeName} setFiltered={setFiltered} regionName={regionName}  /> : 
             <main className="page" >
                 <div>
                     <Filters  countries={countries}  setCountries = {setCountries}
@@ -61,11 +65,11 @@ const AllCountries = () => {
                         </Link>
                     ))}
                 </div>
-            </main>
-        }
+            </main>}
+        
 
         </>
-     );
+     );}
 }
  
 export default AllCountries;

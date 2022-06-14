@@ -1,9 +1,11 @@
-import React, {useState,  useEffect} from "react";
+import React, {useState,  useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
 import './filters.css'
 import {useNavigate} from "react-router";
+import { ThemeContext } from "../../../helper/themecontext";
 
-const Filters = ({countries, fetchCountries, setCountries}) => {
+
+const Filters = ({ countries, fetchCountries, setCountries}) => {
 
     useEffect(() => {
         fetchCountries()
@@ -11,6 +13,7 @@ const Filters = ({countries, fetchCountries, setCountries}) => {
     // eslint-disable-next-line
     []);
 
+    const {setRegionName,setFiltered, filtered} = useContext(ThemeContext)
 
     const [filter, setFilter] = useState([]);
 
@@ -29,8 +32,20 @@ const Filters = ({countries, fetchCountries, setCountries}) => {
     //Linking in an option tag through navigate() in a function
     let navigate = useNavigate()
     const handleRegion = (value) => {
-        navigate(`region/${value}`)
+        setRegionName(value)
+        setFiltered(!filtered)
     }
+
+    const jsUU = () => {
+        
+        console.log("handled")
+    }
+
+    useEffect(() => {
+        if(filtered) {
+            console.log("yipee")
+        }
+    }, [filtered])
 
     //Getting all regions
     const regionsInDuplicates = countries.map(({region}) => (

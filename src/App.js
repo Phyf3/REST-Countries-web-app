@@ -3,35 +3,38 @@ import './App.css';
 import Header from './components/Header/Header';
 import Content from './components/Content/Content';
 import { useState } from 'react';
-
-export const ThemeContext = React.createContext();
-
-const themes = {
-  light: {background : 'hsl(0, 0%, 98%)', color: 'hsl(200, 15%, 8%)'},
-  dark: {background : 'hsl(207, 26%, 17%)', color: 'hsl(0, 0%, 100%)'}
-}
+import { useEffect } from 'react';
+import { ThemeContext } from './helper/themecontext';
 
 
 
 function App() {
 
-  const [theme, setTheme] = useState('dark')
-
-  const toggleTheme = () =>  {
-    setTheme(theme === 'light' ? 'dark' : 'light')
+  const [theme, setTheme] = useState(false)
+  const [themeName, setThemeName] = useState('light-theme')
+  const [filtered, setFiltered] = useState(false)
+  const [regionName, setRegionName] = useState('')
+  const toggleTheme = () => {
+    setTheme(!theme)
   }
 
-  const providerValue = {theme : themes[theme], toggleTheme}
+  useEffect(() => {
+    if(theme) {
+      setThemeName('light-theme')
+    } else {
+      setThemeName('dark-theme')
+    }
+  }, [theme])
+
 
   return (
-    <div className={theme}>
-      <ThemeContext.Provider value = {providerValue}>
-         <Header />
-  
-        <Content />
-      </ThemeContext.Provider>
-       
-    </div>
+    <ThemeContext.Provider value = {{themeName, filtered, setFiltered, regionName, setRegionName}}>
+      <div className={themeName}>
+          <Header toggleTheme = {toggleTheme} theme = {theme} />
+    
+          <Content />       
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

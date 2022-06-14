@@ -2,7 +2,7 @@ import React from "react";
 import Toggle from "./Toggle";
 import './Header.css'
 
-const Header = () => {
+const Header = ({toggleTheme,theme }) => {
     return ( 
         <>
             <header className="header">
@@ -13,7 +13,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <Toggle />
+                    <Toggle toggleTheme = {toggleTheme} theme = {theme}/>
                 </div>
             </header>
         </>

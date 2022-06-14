@@ -1,41 +1,57 @@
+*{
+    border:0rem;
+    padding: 0rem;
+}
+  
 
-.light {
-    background-color: hsl(0, 0%, 98%);
-    color: hsl(200, 15%, 8%);
-}
-.dark{
-    background-color:hsl(207, 26%, 17%) ;
-    color: hsl(0, 0%, 100%);
+.light-theme {
+    --brightblue: hsl(220, 98%, 61%);
+    --selectbg: hsl(0, 0%, 98%);
+    --selectcolor: hsl(200, 15%, 8%);
+    --bg:hsl(0, 0%, 98%) ;
+    --softbg: hsl(233, 11%, 84%);
+    --darkgrayishblue: hsl(236, 9%, 61%);
+    --verydarkgrayishblue: hsl(235, 19%, 35%);
+    --linkColor: black;
+    --countryCard: hsl(0, 0%, 100%);
+    background-color: var(--bg);
 }
 
+.dark-theme{
+    --text-color:hsl(234, 39%, 85%);
+    --brightblue: hsl(220, 98%, 61%);
+    --bg: hsl(207, 26%, 17%) ;
+    --selectbg:  hsl(209, 23%, 22%);
+    --selectcolor: white;
+    --font-color:white ;
+    --lightgrayishblue: hsl(236, 33%, 92%);
+    --darkgrayishblue: hsl(234, 11%, 52%);
+    --linkColor: white;
+    --countryCard: hsl(209, 23%, 22%);
+    background-color: var(--bg);
+}
 
-.dark input, .dark select, .dark .searchlist {
-    background-color: hsl(209, 23%, 22%) ;
-    color: white;
+input, select, .searchlist {
+    background-color: var(--selectbg);
+    color: var(--selectcolor);
 }
-.light .searchlist {
-    background-color: hsl(0, 0%, 100%)
-}
+
 .link {
     text-decoration: none;
-}
-.dark .link {
-    color: white;
-}
-.light .link {
-    color: black;
+    color: var(--linkColor)
 }
 
-.dark .country-card {
-    background-color: hsl(209, 23%, 22%);
+.country-card {
+    background-color: var(--countryCard)
 }
-.light .country-card {
-    background-color: hsl(0, 0%, 100%);
-}
-
 .hide {
     display: none;
 }
 .show {
     display: block;
+}
+body {
+    padding: 0;
+    margin:0;
+    background-color: var(--bg);
 }
