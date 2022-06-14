@@ -23,19 +23,16 @@ const Country = () => {
     }, [name])
 
 
-
-
-
+    const themeName = localStorage.getItem('theme')
 
     return ( 
-        <div className="result-page">
+        <div className={`${themeName} result-page s_country`}>
 
             <div className="result-wrapper">
                 <Link to="/">
                     <button className="back"> Back </button>
                 </Link>
                 
-
                 <div>
                     {loading ? 
                         <h2> I dey find details....... </h2> 

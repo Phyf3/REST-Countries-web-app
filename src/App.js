@@ -21,8 +21,10 @@ function App() {
   useEffect(() => {
     if(theme) {
       setThemeName('light-theme')
+      localStorage.setItem('theme', 'light-theme')
     } else {
       setThemeName('dark-theme')
+      localStorage.setItem('theme', 'dark-theme')
     }
   }, [theme])
 
