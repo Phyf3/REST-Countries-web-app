@@ -1,6 +1,6 @@
 import React from "react";
-import sun from '../../images/icon-sun.svg';
-import moon from '../../images/icon-moon.svg'
+import sun from '../../images/sun.svg'
+import moon from '../../images/moon.svg'
 
 const Toggle = ({toggleTheme,theme }) => {
     return ( 
@@ -12,7 +12,7 @@ const Toggle = ({toggleTheme,theme }) => {
                 aria-live="polite"
                 onClick = {toggleTheme}
             >
-                {theme === 'light-theme' ? 
+                {theme ? 
                 <img src={sun} alt="" />  : 
                 <img src={moon} alt="" /> }
 

@@ -1,7 +1,6 @@
 import React,{ useEffect, useState }  from "react";
-import { Link, useParams } from "react-router-dom";
-import './region.css'
 import './country.css'
+import Skeleton from "./Skeleton";
 
 
 
@@ -9,7 +8,6 @@ const Region = ({themeName,regionName, setFiltered}) => {
 
     const [filterRegion, setFilterRegion] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { region } = useParams()
 
 
     useEffect(() => {
@@ -33,7 +31,7 @@ const Region = ({themeName,regionName, setFiltered}) => {
 
                 <div>
                     {loading ? 
-                        <h2> I dey find details....... </h2> 
+                        <Skeleton/> 
                         : 
                         <div className="result_container">
                             {filterRegion.map(({

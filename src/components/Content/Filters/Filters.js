@@ -1,7 +1,6 @@
 import React, {useState,  useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
 import './filters.css'
-import {useNavigate} from "react-router";
 import { ThemeContext } from "../../../helper/themecontext";
 
 
@@ -29,17 +28,11 @@ const Filters = ({ countries, fetchCountries, setCountries}) => {
     }
 
 
-    //Linking in an option tag through navigate() in a function
-    let navigate = useNavigate()
     const handleRegion = (value) => {
         setRegionName(value)
         setFiltered(!filtered)
     }
 
-    const jsUU = () => {
-        
-        console.log("handled")
-    }
 
     useEffect(() => {
         if(filtered) {

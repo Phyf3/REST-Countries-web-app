@@ -36,7 +36,9 @@ const AllCountries = () => {
    if(!loading){
     return ( 
         <>
-        {filtered ? <Region themeName={themeName} setFiltered={setFiltered} regionName={regionName}  /> : 
+        {filtered ? 
+            <Region themeName={themeName} setFiltered={setFiltered} regionName={regionName}  /> 
+            : 
             <main className="page" >
                 <div>
                     <Filters  countries={countries}  setCountries = {setCountries}

@@ -1,6 +1,7 @@
 import React,{ useEffect, useState }  from "react";
 import { Link, useParams } from "react-router-dom";
 import './country.css'
+import Skeleton from "./Skeleton";
 
 
 const Country = () => {
@@ -35,7 +36,7 @@ const Country = () => {
                 
                 <div>
                     {loading ? 
-                        <h2> I dey find details....... </h2> 
+                        <Skeleton/>
                         : 
                         <div className="result_container">
                             {countryDetails.map(({
