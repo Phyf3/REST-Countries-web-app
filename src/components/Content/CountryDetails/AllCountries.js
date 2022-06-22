@@ -23,7 +23,7 @@ const AllCountries = () => {
 
     useEffect(() => {
         fetchCountries()
-    }, []); 
+    }, [countries])
 
     if(loading) {
         return(

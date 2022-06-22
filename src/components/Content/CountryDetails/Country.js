@@ -11,17 +11,17 @@ const Country = () => {
     const { name } = useParams();
 
 
+    const fetchCountryDetails = async () => {
+        const res = await fetch (`https://restcountries.com/v3.1/name/${name}`)         
+        const data = await res.json()
+        setCountryDetails(data)
+        setLoading(false);
+        console.log(data)
+    } 
 
     useEffect(() => {
-        const fetchCountryDetails = async () => {
-            const res = await fetch (`https://restcountries.com/v3.1/name/${name}`)         
-            const data = await res.json()
-            setCountryDetails(data)
-            setLoading(false);
-            console.log(data)
-        } 
         fetchCountryDetails()
-    }, [name])
+    }, [countryDetails])
 
 
     const themeName = localStorage.getItem('theme')
